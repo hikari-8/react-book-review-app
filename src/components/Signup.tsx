@@ -19,11 +19,11 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name" value={user.name} onChange={handleChange} />
-      <input type="email" name="email" value={user.email} onChange={handleChange} />
-      <input type="password" name="password" value={user.password} onChange={handleChange} />
-      <button type="submit">Sign Up</button>
+    <form onSubmit={handleSubmit} className='flex flex-col mx-52 space-y-4 mt-10'>
+      <input type="text" name="name" value={user.name} onChange={handleChange} className='border-solid border-indigo-600' />
+      <input type="email" name="email" value={user.email} onChange={handleChange} className='border-solid border-indigo-600'/>
+      <input type="password" name="password" value={user.password} onChange={handleChange} className='border-solid border-indigo-600' />
+      <button type="submit" className='border-solid border-indigo-600'>Sign Up</button>
     </form>
   );
 };

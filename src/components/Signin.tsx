@@ -20,7 +20,7 @@ const Signin: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='flex flex-col mx-52 space-y-4 mt-10'>
       <input type="email" name="email" value={user.email} onChange={handleChange} />
       <input type="password" name="password" value={user.password} onChange={handleChange} />
       <button type="submit">Sign In</button>
