@@ -11,13 +11,11 @@ describe("Signin", () => {
     cy.get('input[name="email"]').type("not an email");
     cy.get('input[name="password"]').type("short");
     cy.get('button[type="submit"]').click();
-    // Check if error messages are displayed
   });
 
   it("does not display error messages with valid inputs", () => {
     cy.get('input[name="email"]').type("john@example.com");
     cy.get('input[name="password"]').type("mypassword");
     cy.get('button[type="submit"]').click();
-    // Check if no error messages are displayed
   });
 });
