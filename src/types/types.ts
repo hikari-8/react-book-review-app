@@ -11,3 +11,8 @@ export interface UserResponse {
   userId: string;
   token: string;
 }
+
+export interface UserInfoResponse {
+  name: string;
+  iconUrl: string;
+}
