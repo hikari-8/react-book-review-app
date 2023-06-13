@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { User } from '../types/types';
 import { signIn } from '../api/auth';
+import { getUser } from '../api/api';
 
 const Signin: React.FC = () => {
   const [user, setUser] = useState<User>({email: '', password: ''});
@@ -15,8 +16,9 @@ const Signin: React.FC = () => {
 
   const handleSubmitNewUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = await signIn(user);
-    console.log(data);
+    const res = await signIn(user);
+    const userInfo = await getUser(res.token); 
+    console.log(userInfo);
   };
 
   return (
