@@ -1,7 +1,7 @@
 // src/components/Signin.tsx
 import React, { useState } from 'react';
 import { User } from '../types/types';
-import { signIn } from '../api/api';
+import { signIn } from '../api/auth';
 
 const Signin: React.FC = () => {
   const [user, setUser] = useState<User>({email: '', password: ''});

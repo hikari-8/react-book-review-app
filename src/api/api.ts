@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { User, UserResponse, UserInfoResponse } from '../types/types';
-import { error } from 'console';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -35,8 +34,3 @@ export const getUser = async (token: string): Promise<UserInfoResponse> => {
     throw error;
   }
 }
-
-export const signIn = async (user: User): Promise<UserResponse> => {
-  const response = await axios.post<UserResponse>(`${API_URL}/signin`, user);
-  return response.data;
-};
