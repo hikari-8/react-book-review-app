@@ -17,5 +17,12 @@ describe("Signin", () => {
     cy.get('input[name="email"]').type("john@example.com");
     cy.get('input[name="password"]').type("mypassword");
     cy.get('button[type="submit"]').click();
+    // routing
+    cy.intercept({
+      method: "GET",
+      url: "users/*", // that have a URL that matches '/users/*'
+    },
+  []// and force the response to be: []
+  ).as("getUsers") // and assign an alias
   });
 });
