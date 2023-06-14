@@ -1,15 +1,14 @@
-import React, { useContext } from "react"
+import { useAuthInfoContext } from "../state/UserAuthInfoState"
+import React from "react"
+
 
 export const Home: React.FC = ()=> {
-  // const [user, setUser] = useState<UserInfoResponse>({
-  //   name: "",
-  //   iconUrl: ""
-  // })
+  const {authInfo, setAuthInfo} = useAuthInfoContext()
+  console.log({authInfo})
 
   return (
     <div>
-      ホーム画面です
+      Welcome back , {authInfo?.name}
     </div>
   )
-
 }

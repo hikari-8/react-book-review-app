@@ -23,13 +23,13 @@ const Signin: React.FC = () => {
     const res = await signIn(user);
     console.log({res})
     const userInfo = await getUser(res.token); 
-    navigate("/user")
     // globalなstateにuserのinfoを入れる
     const userAuthInfo: UserAuthInfo = {
       ...authInfo, name: userInfo.name, email: user.email, password: user.password
     }
     console.log({userAuthInfo})
     setAuthInfo(userAuthInfo)
+    navigate("/user")
   };
 
   return (
