@@ -28,7 +28,6 @@ export const getUser = async (token: string): Promise<UserInfoResponse> => {
         Authorization: `Bearer ${token}`
       }
     })
-    console.log(response)
     return response.data;
   } catch(error) {
     throw error;

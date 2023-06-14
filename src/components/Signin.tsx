@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { User } from '../types/types';
 import { signIn } from '../api/auth';
 import { getUser } from '../api/api';
+import { useNavigate } from 'react-router-dom';
 
 const Signin: React.FC = () => {
   const [user, setUser] = useState<User>({email: '', password: ''});
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({
@@ -18,6 +20,8 @@ const Signin: React.FC = () => {
     e.preventDefault();
     const res = await signIn(user);
     const userInfo = await getUser(res.token); 
+    console.log("userId", res.userId)
+    navigate("/user")
     console.log(userInfo);
   };
 
