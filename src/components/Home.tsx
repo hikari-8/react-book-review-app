@@ -7,7 +7,7 @@ export const Home: React.FC = ()=> {
   console.log({authInfo})
 
   return (
-    <div>
+    <div className="w-96 mx-auto text-lg font-bold mt-20 text-center items-center content-center"> 
       Welcome back , {authInfo?.name}
     </div>
   )
