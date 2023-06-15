@@ -8,10 +8,10 @@ import { Home } from '../components/Home';
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route path="/signin" element={<Signin />} />
+      <Route path="/login" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/user" element={<Home />} />
-      <Route path="/" element={<Navigate to="/signin"  replace />} />
+      <Route path="/" element={<Navigate to="/signup"  replace />} />
     </Routes>
   );
 };
