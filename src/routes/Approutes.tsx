@@ -1,8 +1,8 @@
 // src/routes/Routes.tsx
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Signin from '../components/Signin';
-import Signup from '../components/Signup';
+import Signin from '../components/SignIn';
+import Signup from '../components/SignUp';
 import { Home } from '../components/Home';
 
 const AppRoutes: React.FC = () => {

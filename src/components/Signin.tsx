@@ -6,7 +6,7 @@ import { getUser } from '../api/user';
 import { useNavigate } from 'react-router-dom';
 import { useAuthInfoContext } from '../state/UserAuthInfoState';
 
-const Signin: React.FC = () => {
+const SignIn: React.FC = () => {
   const [user, setUser] = useState<User>({email: '', password: ''});
   const navigate = useNavigate();
   const {authInfo, setAuthInfo} = useAuthInfoContext();
@@ -34,11 +34,11 @@ const Signin: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmitNewUser} className='flex flex-col mx-52 space-y-4 mt-10'>
-      <input type="email" name="email" value={user.email} onChange={handleChange} />
-      <input type="password" name="password" value={user.password} onChange={handleChange} />
+      <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} />
+      <input type="password" name="password" placeholder="Password"  value={user.password} onChange={handleChange} />
       <button type="submit">Sign In</button>
     </form>
   );
 };
 
-export default Signin;
+export default SignIn;

@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "@cypress/react18";
-import Signup from "./Signup";
+import Signup from "./SignUp";
 import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Signup", () => {

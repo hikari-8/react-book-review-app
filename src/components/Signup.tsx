@@ -4,7 +4,7 @@ import { User } from '../types/types';
 import { createUser, getUser } from '../api/user';
 import { useAuthInfoContext } from '../state/UserAuthInfoState';
 
-const Signup: React.FC = () => {
+const SignUp: React.FC = () => {
   const [user, setUser] = useState<User>({name: '', email: '', password: ''});
   const navigate = useNavigate();
   const {authInfo, setAuthInfo} = useAuthInfoContext();
@@ -40,4 +40,4 @@ const Signup: React.FC = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
