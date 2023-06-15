@@ -1824,6 +1824,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cypress/react18@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@cypress/react18@npm:2.0.0"
+  peerDependencies:
+    "@types/react": ^18
+    "@types/react-dom": ^18
+    cypress: "*"
+    react: ^18
+    react-dom: ^18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: b5faf1c98633019dd9301315d996d035a915732bb9e27bf1adb4e63e92af8323a0221b76b1d41519bf1ab5d75a063020102579666290bbae436e3047ad975394
+  languageName: node
+  linkType: hard
+
 "@cypress/react@npm:^7.0.3":
   version: 7.0.3
   resolution: "@cypress/react@npm:7.0.3"
@@ -11423,6 +11439,7 @@ __metadata:
   resolution: "react-book-review@workspace:."
   dependencies:
     "@cypress/react": ^7.0.3
+    "@cypress/react18": ^2.0.0
     "@testing-library/cypress": ^9.0.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.4.0
