@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { User } from '../types/types';
-import { createUser } from '../api/api';
+import { createUser, getUser } from '../api/user';
+import { useAuthInfoContext } from '../state/UserAuthInfoState';
 
 const Signup: React.FC = () => {
   const [user, setUser] = useState<User>({name: '', email: '', password: ''});
+  const navigate = useNavigate();
+  const {authInfo, setAuthInfo} = useAuthInfoContext();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({
@@ -14,8 +18,16 @@ const Signup: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = await createUser(user);
-    console.log(data);
+    const res = await createUser(user);
+    const userInfo = await getUser(res.token); 
+    setAuthInfo({
+      ...authInfo,
+      name: userInfo?.name,
+      email: user.email,
+      password: user.password,
+      userIconUrl: userInfo?.iconUrl,
+    })
+    navigate("/user")
   };
 
   return (

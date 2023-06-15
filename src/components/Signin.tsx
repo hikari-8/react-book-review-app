@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { User, UserAuthInfo } from '../types/types';
 import { signIn } from '../api/auth';
-import { getUser } from '../api/api';
+import { getUser } from '../api/user';
 import { useNavigate } from 'react-router-dom';
 import { useAuthInfoContext } from '../state/UserAuthInfoState';
 
@@ -21,8 +21,8 @@ const Signin: React.FC = () => {
   const handleSubmitNewUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await signIn(user);
-    console.log({res})
     const userInfo = await getUser(res.token); 
+
     // globalなstateにuserのinfoを入れる
     const userAuthInfo: UserAuthInfo = {
       ...authInfo, name: userInfo.name, email: user.email, password: user.password

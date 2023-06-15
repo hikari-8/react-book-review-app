@@ -3,7 +3,7 @@ import React from "react"
 
 
 export const Home: React.FC = ()=> {
-  const {authInfo, setAuthInfo} = useAuthInfoContext()
+  const {authInfo} = useAuthInfoContext()
   console.log({authInfo})
 
   return (
