@@ -1,5 +1,6 @@
 import { UserAuthInfo } from "@/types/types"
-import { createContext, useState, useContext, ReactNode, Dispatch, SetStateAction } from "react"
+import { createContext, useContext, ReactNode, Dispatch, SetStateAction } from "react"
+import { usePersistedState } from '../hooks/usePersistedState';
 
 type AuthContextType = {
   authInfo: UserAuthInfo | null;
@@ -21,7 +22,8 @@ type AuthInfoProviderProps = {
 };
 
 export const AuthInfoProvider = ({ children }: AuthInfoProviderProps)=> {
-  const [authInfo, setAuthInfo] = useState<UserAuthInfo | null>(null);
+  // const [authInfo, setAuthInfo] = useState<UserAuthInfo | null>(null);
+  const [authInfo, setAuthInfo] = usePersistedState<UserAuthInfo | null>('auth-info', null);
   return (
     <AuthInfoContext.Provider value={{authInfo, setAuthInfo}}>
       {children}
