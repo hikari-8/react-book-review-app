@@ -26,3 +26,15 @@ export interface UserAuthInfo {
   password?: string;
   userIconUrl?: string;
 }
+
+/**
+ * book reviews
+ */
+export interface BookReviewInfo {
+    id: string;
+    title: string;
+    url: string;
+    detail: string,
+    review: string;
+    reviewer: string;
+}
