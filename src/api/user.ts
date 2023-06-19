@@ -33,3 +33,25 @@ export const getUser = async (token: string): Promise<UserInfoResponse> => {
     throw error;
   }
 }
+
+/**
+ * アイコン登録API
+ */
+export const registerUserIcon = async (iconUrl: File| Blob, token: string): Promise<UserResponse> => {
+  try{
+    const formData = new FormData();
+    formData.append('icon', iconUrl);
+
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Authorization': `Bearer ${token}`
+      },
+    };
+
+    const response = await axios.post<UserResponse>(`${API_URL}/uploads`, formData, config);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
